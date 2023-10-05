@@ -1,3 +1,5 @@
+package day1;
+
 import com.github.javafaker.Faker;
 
 public class Demo {

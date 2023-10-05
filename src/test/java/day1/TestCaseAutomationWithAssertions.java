@@ -1,3 +1,5 @@
+package day1;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -6,7 +8,7 @@ public class TestCaseAutomationWithAssertions {
 
     public static void main(String[] args) {
 
-    // Demo of the push and pull
+    // day1.Demo of the push and pull
 
         WebDriver driver = new ChromeDriver();
 //        2. Navigate to google.com
