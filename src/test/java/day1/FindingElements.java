@@ -12,7 +12,7 @@ public class FindingElements {
 
     public static void main(String[] args) throws InterruptedException {
 
-      //TC-002
+      //TC-002 - Verify search term appears in title
 
 
 
