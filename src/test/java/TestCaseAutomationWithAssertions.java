@@ -6,7 +6,7 @@ public class TestCaseAutomationWithAssertions {
 
     public static void main(String[] args) {
 
-
+    // Demo of the push and pull
 
         WebDriver driver = new ChromeDriver();
 //        2. Navigate to google.com
