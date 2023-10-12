@@ -41,8 +41,11 @@ public class FindElementVsFindElements {
             }
 
 
-            // when findElements method can't find the element
+            // when findElements() method can't find the elements
             // no exception is thrown but an empty list is returned
+//            vs
+            // when findElement() method can't find the element
+            // NoSuchElementException is thrown
 
 
 
