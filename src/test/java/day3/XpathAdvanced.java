@@ -21,7 +21,16 @@ public class XpathAdvanced {
 
         // Using attributes
         // //a[@role] -> all a elements that contain role attribute
+        // //a[not( @role )] -> all a elements that do not contain role attribute
 
+        //  //h3[not(@class='LC20lb MBeuO DKV0Md')] -> all h3 elements that do not contain class with the given value
+
+
+        // //*[@id='hello'] -> find any element whose id is hello
+        //   //*[@*] -> any element with any attribute
+
+
+        //div[@class='a-cardui-header']//h2[@class='a-color-base headline']
 
         WebDriver driver = null ;
         try {
