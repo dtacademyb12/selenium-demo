@@ -35,6 +35,14 @@ public class XpathAdvanced2 {
         //   syntax -> //tag[@attr='value']/preceding-sibling::tag[1]
         //           //a[@href='/prime?ref_=nav_cs_primelink_nonmember']/preceding-sibling::a[1]
 
+
+        //How do you handle dynamic elements?
+        // Dynamic element is an element with a dynamic attribute such as id, name
+
+        //div[starts-with( @id, 'CardInstance')]
+        //div[ends-with( @id, 'CardInstance')]
+        //div[contains( @id, 'CardInstance')]
+
         WebDriver driver = null ;
         try {
 
@@ -50,6 +58,12 @@ public class XpathAdvanced2 {
             System.out.println(driver.findElement(By.xpath("//a[.='Disability Customer Support']/parent::div")).getText());
             System.out.println(driver.findElement(By.xpath("//a[@href='/gp/bestsellers/?ref_=nav_cs_bestsellers']/following-sibling::a")).getText());
             System.out.println(driver.findElement(By.xpath("//a[@href='/prime?ref_=nav_cs_primelink_nonmember']/preceding-sibling::a[1]")).getText());
+
+
+
+            System.out.println(driver.findElement(By.xpath("//div[starts-with( @id, 'CardInstance')][@*='fluid-fat-image-link-v2_desktop-gateway-atf_1']")).getText());
+
+
 
 
 
