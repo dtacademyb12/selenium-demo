@@ -1,4 +1,4 @@
-package day3;
+package day4;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -6,7 +6,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 import java.util.List;
 import java.util.Random;
-import java.util.RandomAccess;
 
 public class RadioButtons {
 

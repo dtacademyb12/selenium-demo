@@ -1,4 +1,4 @@
-package day3;
+package day4;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
