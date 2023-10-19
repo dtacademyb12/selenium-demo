@@ -23,4 +23,15 @@ public class SeleniumUtils {
 
         return actualList;
     }
+
+
+    public static void switchToWindow(WebDriver driver, String title){
+
+        for (String windowHandle : driver.getWindowHandles()) {
+            driver.switchTo().window(windowHandle);
+            if(driver.getTitle().equals(title)){
+                break;
+            }
+        }
+    }
 }
