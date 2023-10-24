@@ -20,6 +20,7 @@ public class ExplicitWait2 {
         try {
             driver = new ChromeDriver();
             driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
             // POLLING FREQUENCY -> 0.5 seconds
 
@@ -35,11 +36,16 @@ public class ExplicitWait2 {
 
             //wait till the element is present
 
-//            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-//            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//h4[.='Hello World!']")));
+            // If you need to mix implicit and explicit wait, first set the implicit wait back to zero and re-set it afterward
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
 
-            SeleniumUtils.waitTillElementIsPresent(driver, By.xpath("//h4[.='Hello World!']"), 5);
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//h4[.='Hello World!']")));
 
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+//            SeleniumUtils.waitTillElementIsPresent(driver, By.xpath("//h4[.='Hello World!']"), 5);
+
+//            SeleniumUtils.waitFor(3);
             //TimeoutException:
            // Expected condition failed: waiting for presence of element located by: By.xpath: //h4[.='Hello World!'] (tried for 2 second(s) with 500 milliseconds interval)
 
@@ -53,6 +59,9 @@ public class ExplicitWait2 {
 
 
             // If the implicit wait is over and the element is not found, NoSuchElementException is thrown
+
+
+
 
 
 

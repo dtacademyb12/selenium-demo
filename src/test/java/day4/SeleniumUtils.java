@@ -1,12 +1,12 @@
 package day4;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,5 +42,25 @@ public class SeleniumUtils {
 
     public static void waitTillElementIsPresent(WebDriver driver, By by, int timeout){
        new WebDriverWait(driver, Duration.ofSeconds(timeout)).until(ExpectedConditions.presenceOfElementLocated(by));
+    }
+
+
+    public static void waitFor(int seconds){
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    public static void takeScreenshot(WebDriver driver, String path){
+        TakesScreenshot screenshot = (TakesScreenshot)driver;
+        File screenshotAs = screenshot.getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(screenshotAs, new File(path));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
