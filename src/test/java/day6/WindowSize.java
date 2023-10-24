@@ -18,7 +18,7 @@ public class WindowSize {
 
         try {
             driver = new ChromeDriver();
-//            driver.manage().window().setSize(new Dimension(840,470));
+            driver.manage().window().setSize(new Dimension(840,470));
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
             System.out.println(driver.manage().window().getSize());
