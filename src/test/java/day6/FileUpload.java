@@ -7,12 +7,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
 
 public class FileUpload {
 
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, AWTException {
 
 
 
@@ -31,6 +33,16 @@ public class FileUpload {
         driver.findElement(By.xpath("//figure[@*='user-widget-avatar']")).click();
         driver.findElement(By.xpath("//a[@*='/user/31p5lcr3dkirlgo7kuqxqzpkjcvu']")).click();
         driver.findElement(By.xpath("//button[@*='edit-image-button']")).click();
+
+        // write Robot class code to get rid of OS window
+
+
+        Robot robot = new Robot();
+        robot.delay(2000);
+        robot.keyPress(KeyEvent.VK_ESCAPE);
+        robot.keyRelease(KeyEvent.VK_ESCAPE);
+        Thread.sleep(1000);
+
         driver.findElement(By.xpath("//input[@type='file']")).sendKeys("/Users/duotech/IdeaProjects/selenium-demo2/src/test/java/day6/file.png");
 
 
